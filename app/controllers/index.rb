@@ -1,11 +1,12 @@
 require 'SecureRandom'
-#this will be our list homepage
+
+require 'pony'
+
 get '/' do
   @list = Category.all
   erb :index
 end
 
-#this will be our specific cat list
 get '/category/:id' do
   @id = params['id']
   @category= Category.find(@id)
@@ -16,7 +17,25 @@ end
 
 post '/post' do
   params[:key] = SecureRandom.hex(3)
+  puts "hello"
+  p params
   @new_post = Post.create(params)
+  Pony.mail({
+  :to => "#{@new_post.email}",
+  :subject => 'Your post was created',
+  :via => :smtp,
+  :headers => { 'Content-Type' => 'text/html' },
+  :body => erb(:email),
+  :via_options => {
+    :address              => 'smtp.gmail.com',
+    :port                 => '587',
+    :enable_starttls_auto => true,
+    :user_name            => 'binaryskipper',
+    :password             => 'S112233n',
+    :authentication       => :plain, # :plain, :login, :cram_md5, no auth by default
+    :domain               => "localhost:9292" 
+  }
+})
   @post_id = @new_post.id
   redirect to "/post/#{@post_id}"
 end
@@ -39,4 +58,5 @@ get '/create_post' do
   @list = Category.all
   erb :create_post
 end
+
 

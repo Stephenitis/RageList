@@ -1,23 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
-  <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
-  <link rel="stylesheet" href="/css/application.css">
 
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/application.css">
+<link href='http://fonts.googleapis.com/css?family=Special+Elite|Bowlby+One|Donegal+One' rel='stylesheet' type='text/css'>
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
   <title></title>
 </head>
 <body>
+  <div class="nav">
+      <!-- <img src="http://scm-l3.technorati.com/12/12/13/73853/devbootcamp.png"> -->
+      <a href="/"><h1>RAGE LIST</h1></a>
+      <ul id="navlist">
+        <li><a href="/">Home</a></li>
+        <li><a href="http://binaryskipper.tumblr.com">About</a></li>
+        <li><a href="http://www.google.com">Search</a></li>
+        <li><a href="http://stephenitis.com">SexyTime</a></li>
+      </ul>
+  </div>
   <%= yield %>
+  <footer>
+    <p>Copyright @stephenitis & @vincentstorme Devbootcamp 2013</p>
+  </footer>
 </body>
 </html>

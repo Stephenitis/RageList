@@ -1,3 +1,4 @@
+<div class="container">
 <h1> Create New Post</h1>
 
 <form action="/post" method= "post">
@@ -10,7 +11,9 @@
             <option value="<%= cat.id %>"><%= cat.name %></option>
             <% end %>
             </select><br>
+  Email: <input type='text' name='email'><br>
   
   <input type="Submit" value="Create New Post">
 
 </form>
+</div>
