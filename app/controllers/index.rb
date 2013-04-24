@@ -12,7 +12,6 @@ get '/category/:id' do
   @category_items = @category.posts
   p @category_items
   erb :category
-
 end
 
 post '/post' do
@@ -41,6 +40,3 @@ get '/create_post' do
   erb :create_post
 end
 
-post '/post_created' do
-  "this shit happened"
-end

@@ -1,5 +1,5 @@
 <div>
-<h1>List Items for this specific category interpolate the name here?</h1>
+<h1><%= @category.name %></h1>
 <ul>
   <% @category_items.each do |item| %>
   <li> <a href="/post/<%=item.id%>"> <%=item.name %></a></li>
