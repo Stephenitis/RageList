@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>Welcome to Fab's Fabulous Flea Market!</h1>
+  
+  <a href= "/create_post">New Post</a>
+  
+  
+  
+  <div class="cat_list">
+    This is where we will enumerate the category names
+    <% @list.each do |cat|  %>
+    
+      <ul>
+        <li><a href="/category/<%= cat.id %>"><%= cat.name %></a></li>
+      </ul>
+    
+    <% end %>
+  </div>
+
+  <footer>
+    Copyright @stephenitis & @vincentstorme Devbootcamp 2013
+  </footer>
+</div>

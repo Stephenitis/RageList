@@ -1,0 +1,15 @@
+<h1> Edit Post</h1>
+
+<form action="/post" method= "post">
+
+  Name: <input type='text' name='name' value=<%= @post.name%>><br>
+  Description: <input type='text' name='description' value=<%= @post.description%>><br>
+  Price: <input type='text' name='price' value=<%= @post.price%>><br>
+  Category: <select name="category_id">
+            <% Category.all.each do |cat| %>
+            <option value="<%= cat.id %>"><%= cat.name %></option>
+            <% end %>
+            </select><br>
+  
+  <input type="Submit" value="Edit Post">
+</form>

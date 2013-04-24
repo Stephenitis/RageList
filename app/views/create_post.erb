@@ -1,0 +1,16 @@
+<h1> Create New Post</h1>
+
+<form action="/post" method= "post">
+
+  Name: <input type='text' name='name'><br>
+  Description: <input type='text' name='description'><br>
+  Price: <input type='text' name='price'><br>
+  Category: <select name="category_id">
+            <% @list.each do |cat| %>
+            <option value="<%= cat.id %>"><%= cat.name %></option>
+            <% end %>
+            </select><br>
+  
+  <input type="Submit" value="Create New Post">
+
+</form>
